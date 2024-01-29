@@ -1,0 +1,6 @@
+ul li{
+    list-style-type: none;
+}
+i.fa-xmark{
+    cursor: pointer;
+}
