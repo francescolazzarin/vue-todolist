@@ -40,6 +40,9 @@
       aggiungitodo(){
         this.todoList.push({text:this.nuovoTodo, done:false})
         this.nuovoTodo = " "
+      },
+      invertiDone(index){
+        this.todoList[index].done = !this.todoList[index].done
       }
     }
   }).mount('#app')

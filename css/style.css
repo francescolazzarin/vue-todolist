@@ -4,3 +4,6 @@ ul li{
 i.fa-xmark{
     cursor: pointer;
 }
+li>span{
+    cursor: pointer;
+}

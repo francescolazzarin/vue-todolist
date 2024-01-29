@@ -16,14 +16,14 @@
             <div class="row w-50 m-auto align-items-end">
                 <div class="col-9">
                     <label for="todo" class="form-label">Aggiungi todo</label>
-                    <input v-model="nuovoTodo" type="text" class="form-control" id="todo" placeholder="Aggiungi todo">
+                    <input v-model="nuovoTodo"  @keyup.enter="aggiungitodo()" type="text" class="form-control" id="todo" placeholder="Aggiungi todo">
                 </div>
                 <div class="col-3">
                     <button @click="aggiungitodo()" class="btn bg-success">aggiungi</button>
                 </div>
             </div>
             <ul class="w-50 m-auto mt-5">
-                <li class="d-flex justify-content-between" v-for="(element, index) in todoList" ><span :class="element.done ? 'text-decoration-line-through' : 'text-decoration-none'">{{element.text}}</span><i @click="rimuovitoDo(index)" class="fa-solid fa-xmark text-danger"></i></li>
+                <li class="d-flex justify-content-between" v-for="(element, index) in todoList" ><span @click="invertiDone(index)" :class="element.done ? 'text-decoration-line-through' : 'text-decoration-none'">{{element.text}}</span><i @click="rimuovitoDo(index)" class="fa-solid fa-xmark text-danger"></i></li>
             </ul>
         </div>
     </div>
