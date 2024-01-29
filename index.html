@@ -13,7 +13,16 @@
         
         <div class="container">
             <h1 class="text-center">Todo</h1>
-            <ul class="w-50 m-auto">
+            <div class="row w-50 m-auto align-items-end">
+                <div class="col-9">
+                    <label for="todo" class="form-label">Aggiungi todo</label>
+                    <input v-model="nuovoTodo" type="text" class="form-control" id="todo" placeholder="Aggiungi todo">
+                </div>
+                <div class="col-3">
+                    <button @click="aggiungitodo()" class="btn bg-success">aggiungi</button>
+                </div>
+            </div>
+            <ul class="w-50 m-auto mt-5">
                 <li class="d-flex justify-content-between" v-for="(element, index) in todoList" ><span :class="element.done ? 'text-decoration-line-through' : 'text-decoration-none'">{{element.text}}</span><i @click="rimuovitoDo(index)" class="fa-solid fa-xmark text-danger"></i></li>
             </ul>
         </div>

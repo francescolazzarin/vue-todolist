@@ -18,6 +18,7 @@
   createApp({
     data() {
       return {
+        nuovoTodo:" ",
         todoList: [
             { text: 'Fare la spesa', done: false },
             { text: 'Studiare per l\'esame', done: true },
@@ -33,8 +34,12 @@
       }
     },
     methods:{
-        rimuovitoDo(indiceCorrente){
-            this.todoList.splice(indiceCorrente, 1)
-        }
+      rimuovitoDo(indiceCorrente){
+        this.todoList.splice(indiceCorrente, 1)
+      },
+      aggiungitodo(){
+        this.todoList.push({text:this.nuovoTodo, done:false})
+        this.nuovoTodo = " "
+      }
     }
   }).mount('#app')
